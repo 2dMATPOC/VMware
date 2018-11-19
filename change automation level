@@ -1,3 +1,4 @@
+add-pssnapin vmware*
 $var = Read-Host "Get vCenter names"
 $user = Read-Host "Username"
 $password = Read-Host "Password" -AsSecureString
