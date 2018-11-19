@@ -1,2 +1,4 @@
 $vm = Read-Host "Get VM1 name"
 get-vm | ? name -Match $vm | Set-VM -DrsAutomationLevel PartiallyAutomated -Confirm:$false
+
+get-cluster | Get-DrsRule | where name -EQ (DRS Rule Name) | Set-DrsRule -vm (VMnames)
