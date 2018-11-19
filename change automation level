@@ -1,7 +1,7 @@
 $var = "", ""
-$user = 
-$password =
-$vm = ""
+$user = Read-Host "Username"
+$password = Read-Host "Password" -AsSecureString
+$vm = Read-Host "VM names"
 for ($i = 0; $i -le $var.Count; $i++) {
   Connect-VIServer $var[$i] -User $user -Password $password
   get-vm | ? name -Match $vm | Set-VM -DrsAutomationLevel PartiallyAutomated -Confirm:$false 
