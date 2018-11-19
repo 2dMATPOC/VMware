@@ -1,0 +1,9 @@
+$var = "", ""
+$user = 
+$password =
+$vm = ""
+for ($i = 0; $i -le $var.Count; $i++) {
+  Connect-VIServer $var[$i] -User $user -Password $password
+  get-vm | ? name -Match $vm | Set-VM -DrsAutomationLevel PartiallyAutomated -Confirm:$false 
+  Disconnect-VIServer $var[$i] -Confirm:$false
+  }
