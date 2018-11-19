@@ -1,10 +1,2 @@
-add-pssnapin vmware*
-$var = Read-Host "Get vCenter names"
-$user = Read-Host "Username"
-$password = Read-Host "Password" -AsSecureString
-$vm = Read-Host "Get VM names"
-for ($i = 0; $i -le $var.Count; $i++) {
-  Connect-VIServer $var[$i] -User $user -Password $password
-  get-vm | ? name -Match $vm | Set-VM -DrsAutomationLevel PartiallyAutomated -Confirm:$false 
-  Disconnect-VIServer $var[$i] -Confirm:$false
-  }
+$vm = Read-Host "Get VM1 name"
+get-vm | ? name -Match $vm | Set-VM -DrsAutomationLevel PartiallyAutomated -Confirm:$false
