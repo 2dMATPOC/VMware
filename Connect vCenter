@@ -3,9 +3,9 @@ add-pssnapin vmware*
 $var = vCenter Names
 $user = Read-Host "Username"
 
-$password = Read-Host "Password" -AsSecureString
+$password = Read-Host "Password" -AsSecureString #doesn't work
 for ($i = 0; $i -le $var.Count; $i++) {
-  Connect-VIServer $var[$i] -User $user -Password $password
+  Connect-VIServer $var[$i] -User $user -Password 'password'
   
 Disconnect-VIServer $var[$i] -Confirm:$false
   }
